@@ -15,7 +15,7 @@ import (
 )
 
 // RegisterStatsExporter determines the type of StatsExporter service for exporting stats from Opencensus
-// Currently it supports: prometheus
+// Currently it supports: prometheus, stackdriver and datadog
 func RegisterStatsExporter(r *mux.Router, statsExporter, service string) (func(), error) {
 	const op errors.Op = "observ.RegisterStatsExporter"
 	var stop = func() {}
